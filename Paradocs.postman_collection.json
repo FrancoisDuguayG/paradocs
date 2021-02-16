@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "bed393d7-1c6e-4295-943f-56b26b7cc258",
+		"name": "Paradocs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "resort",
+			"item": [
+				{
+					"name": "create ski resort",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"SkiResortId\", jsonData[\"id\"]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ma maison\",\n    \"description\": \"y'a pas de file ici\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ski resort",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/{{SkiResortId}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								"{{SkiResortId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all ski resort",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ski resort",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ma maison sur le top d'une montagne\",\n    \"description\": \"Il n'y a pas de file ici\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/{{SkiResortId}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								"{{SkiResortId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ski resort",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/{{SkiResortId}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								"{{SkiResortId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ski resort with bad id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/WRONG-ID-n8IpDK",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								"WRONG-ID-n8IpDK"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get deleted ski resort",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/skiResort/{{SkiResortId}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"skiResort",
+								"{{SkiResortId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
